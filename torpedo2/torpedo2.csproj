@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="torpedo game.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="torpedo game.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="pages\MultiPlayer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="pages\Record.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="pages\SinglePlayer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="pages\MultiPlayer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\Record.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="pages\SinglePlayer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

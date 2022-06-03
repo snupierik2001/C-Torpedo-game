@@ -1,0 +1,179 @@
+﻿<Page x:Class="Torpedo.pages.SinglePlayer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Torpedo.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SinglePlayer">
+
+    <Grid Background="White">
+        <Grid x:Name="GameBoardGrid" Visibility="Collapsed" KeyDown="Window_KeyDown" Focusable="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0">
+                <Button x:Name="RestartButton" Content="Restart" MinWidth="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="RestartButttonClick"/>
+                <Button x:Name="HelpButton" Content="Help" MinWidth="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="HelpButttonClick"/>
+                <Label x:Name="PlayerNameLabel" Content="Player name" VerticalAlignment="Center" HorizontalAlignment="Center" MouseDoubleClick="DoubleClickOnPlayerNameLabel"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0">
+                <StackPanel>
+                    <Label Content="Remaining Enemy Ships" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Label x:Name="RemainingEnemyShipsLabel" Content="NUMBER" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel>
+                    <Label Content="Enemy Ships Hit" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Label x:Name="EnemyShipsHitLabel" Content="NUMBER" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel>
+                    <Label Content="Fired Torpedos" HorizontalAlignment="Center"/>
+                    <Label x:Name="FiredTorpedosLabel" Content="NUMBER" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel>
+                    <Label Content="Round" HorizontalAlignment="Center"/>
+                    <Label x:Name="RoundLabel" Content="NUMBER" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+            </StackPanel>
+
+            <Grid Grid.Column="0" Grid.Row="1" Margin="10" Width="380" Height="380">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="A" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="B" Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="C" Grid.Column="3" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="D" Grid.Column="4" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="E" Grid.Column="5" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="F" Grid.Column="6" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="G" Grid.Column="7" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="H" Grid.Column="8" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="I" Grid.Column="9" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="J" Grid.Column="10" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                <Label Content="1" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="2" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="3" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="4" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="5" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="6" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="7" Grid.Column="0" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="8" Grid.Column="0" Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="9" Grid.Column="0" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="10" Grid.Column="0" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                <Canvas x:Name="PlayerCanvas" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="10" Grid.RowSpan="10" Width="342" Height="342"/>
+            </Grid>
+
+            <Grid Grid.Column="1" Grid.Row="1" Margin="10" Width="380" Height="380">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="A" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="B" Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="C" Grid.Column="3" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="D" Grid.Column="4" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="E" Grid.Column="5" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="F" Grid.Column="6" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="G" Grid.Column="7" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="H" Grid.Column="8" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="I" Grid.Column="9" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="J" Grid.Column="10" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                <Label Content="1" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="2" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="3" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="4" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="5" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="6" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="7" Grid.Column="0" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="8" Grid.Column="0" Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="9" Grid.Column="0" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="10" Grid.Column="0" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                <Canvas x:Name="EnemyCanvas" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="10" Grid.RowSpan="10" Width="342" Height="342" MouseLeftButtonDown="EnemyCanvas_MouseLeftButtonDown"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="PlayerNameGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Column="1" Grid.Row="1" x:Name="EnterPlayerNameLabel" Content="Player name" Margin="10" FontSize="16" Height="30" VerticalAlignment="Center"/>
+            <TextBox Grid.Column="2" Grid.Row="1" x:Name="PlayerNameTextBox" Text="" Margin="10" FontSize="20" MaxLength="10"/>
+
+            <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" x:Name="SaveButton" Content="Save" Margin="10" Click="SaveButtonClick"/>
+
+
+        </Grid>
+        <Grid x:Name="GameOverGrid">
+            <Label Name="GameOverLabel" Content="" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40"/>
+        </Grid>
+    </Grid>
+
+
+</Page>
