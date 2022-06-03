@@ -1,11 +1,3 @@
-# Torpedó játék
-
-> .NET-es grafikus (WPF keretrendszerben írt) játék elkészítése.
-
-## Játék leírása
-
-[Magyar](https://hu.wikipedia.org/wiki/Torped%C3%B3_(j%C3%A1t%C3%A9k))
-
 ## Követelmények
 
 ### Egymás ellen lehessen játszani ugyanazon a gépen, ugyanabban az alkalmazásban
