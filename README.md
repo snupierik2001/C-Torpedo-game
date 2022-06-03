@@ -38,5 +38,4 @@
     - Rendszeres commit minden csapattagtól
 - Egy solution használata
 - Egy haladó technológia használata a felsoroltak közül (Entity FWK, Blazor, Async, MVVM)
-- Konvenciók alkalmazása: [NI C# Style Guide](https://github.com/ni/csharp-styleguide)
     - Java, Python stílusú elnvezéseket ne használjatok
